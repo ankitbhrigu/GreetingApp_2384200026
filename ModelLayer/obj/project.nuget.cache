@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "UlVqFrQFPRA=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Ankit Singh\\source\\repos\\HelloGreetingApplication\\ModelLayer\\ModelLayer.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Ankit Singh\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.32\\microsoft.windowsdesktop.app.ref.6.0.32.nupkg.sha512",
+    "C:\\Users\\Ankit Singh\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.32\\microsoft.netcore.app.ref.6.0.32.nupkg.sha512",
+    "C:\\Users\\Ankit Singh\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.32\\microsoft.aspnetcore.app.ref.6.0.32.nupkg.sha512"
+  ],
+  "logs": []
+}
