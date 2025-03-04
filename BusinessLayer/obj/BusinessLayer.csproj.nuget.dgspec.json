@@ -185,7 +185,11 @@
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\Ankit Singh\\source\\repos\\HelloGreetingApplication\\ModelLayer\\ModelLayer.csproj": {
+                "projectPath": "C:\\Users\\Ankit Singh\\source\\repos\\HelloGreetingApplication\\ModelLayer\\ModelLayer.csproj"
+              }
+            }
           }
         },
         "warningProperties": {

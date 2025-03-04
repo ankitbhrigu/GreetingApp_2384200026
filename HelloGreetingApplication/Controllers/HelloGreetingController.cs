@@ -1,25 +1,68 @@
+using BusinessLayer.Interface;
+using BusinessLayer.Service;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using ModelLayer.Model;
-using System.Collections.Generic;
+using NLog;
 
 namespace HelloGreetingApplication.Controllers
 {
+
     /// <summary>
     /// Class Providing API for HelloGreeting
     /// </summary>
     [ApiController]
     [Route("[controller]")]
+
+
     public class HelloGreetingController : ControllerBase
     {
-        private static Dictionary<string, string> _greetings = new Dictionary<string, string>();
-        private readonly ILogger<HelloGreetingController> _logger;
 
-        public HelloGreetingController(ILogger<HelloGreetingController> logger)
+        private IGreetingBL _greetingBL;
+
+        private static readonly Logger _logger = LogManager.GetCurrentClassLogger();
+
+        public HelloGreetingController(IGreetingBL _greetingBL)
         {
-            _logger = logger;
+            this._greetingBL = _greetingBL;
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns></returns>
+
+        [HttpPost("GreetByName")]
+        public IActionResult GetGreeting(UserNameRequestModel request)
+        {
+            ResponseModel<String> responseModel = new ResponseModel<string>();
+            responseModel.Success = true;
+            responseModel.Message = "Greet message ";
+            responseModel.Data = _greetingBL.GetGreeting(request);
+            _logger.Info("Post Method Executed");
+            return Ok(responseModel);
         }
 
+
+        /// <summary>
+        /// Get Greet message from service Layer
+        /// </summary>
+        /// <returns></returns>
+        /// 
+
+
+        [HttpGet("Greet")]
+        public IActionResult GetGreet()
+        {
+            String data = _greetingBL.GetGreet();
+            ResponseModel<String> responseModel = new ResponseModel<string>();
+            responseModel.Success = true;
+            responseModel.Message = "Greet message ";
+            responseModel.Data = data;
+            _logger.Info("Get Method Executed");
+            return Ok(responseModel);
+
+        }
         /// <summary>
         /// Get method to get the Greeting Message
         /// </summary>
@@ -27,137 +70,85 @@ namespace HelloGreetingApplication.Controllers
         [HttpGet]
         public IActionResult Get()
         {
-            _logger.LogInformation("GET request received.");
+            ResponseModel<String> responseModel = new ResponseModel<string>();
 
-            var responseModel = new ResponseModel<string>
-            {
-                Success = true,
-                Message = "API Endpoint Hit",
-                Data = "Hello World"
-            };
-
-            _logger.LogInformation("GET response sent successfully.");
+            responseModel.Success = true;
+            responseModel.Message = "API Endpoint Hit";
+            responseModel.Data = "Hello World";
+            _logger.Info("Get Method Executed");
             return Ok(responseModel);
         }
 
         /// <summary>
         /// Post method to accept a custom greeting message
         /// </summary>
+        /// <param name="requestModel">Greeting message from user</param>
+        /// <returns>Confirmation response</returns>
         [HttpPost]
         public IActionResult Post(RequestModel requestModel)
         {
-            _logger.LogInformation($"POST request received with Key: {requestModel.key}, Value: {requestModel.value}");
+            ResponseModel<String> responseModel = new ResponseModel<string>();
 
-            if (_greetings.ContainsKey(requestModel.key))
-            {
-                _logger.LogWarning($"Key {requestModel.key} already exists.");
-                return BadRequest(new ResponseModel<string>
-                {
-                    Success = false,
-                    Message = "Key already exists.",
-                    Data = null
-                });
-            }
+            responseModel.Success = true;
+            responseModel.Message = "API Endpoint Hit";
+            responseModel.Data = $"Key: {requestModel.key} , Value : {requestModel.value} ";
+            _logger.Info("Post Method Executed");
+            return Ok(responseModel);
 
-            _greetings[requestModel.key] = requestModel.value;
-            _logger.LogInformation($"New greeting added: Key = {requestModel.key}, Value = {requestModel.value}");
 
-            return Ok(new ResponseModel<string>
-            {
-                Success = true,
-                Message = "Greeting message received successfully.",
-                Data = $"Key: {requestModel.key}, Value: {requestModel.value}"
-            });
         }
 
         /// <summary>
-        /// Put method for updating a greeting message
+        /// Put method to accept a custom greeting message
         /// </summary>
+        /// <param name="requestModel">Greeting message from user</param>
+        /// <returns>Confirmation response</returns>
         [HttpPut]
         public IActionResult Put(RequestModel requestModel)
         {
-            _logger.LogInformation($"PUT request received for Key: {requestModel.key} with new Value: {requestModel.value}");
+            ResponseModel<String> responseModel = new ResponseModel<string>();
 
-            if (!_greetings.ContainsKey(requestModel.key))
-            {
-                _logger.LogWarning($"PUT failed: Key {requestModel.key} not found.");
-                return NotFound(new ResponseModel<string>
-                {
-                    Success = false,
-                    Message = "Key not found.",
-                    Data = null
-                });
-            }
+            responseModel.Success = true;
+            responseModel.Message = "API Endpoint Hit in Put Method";
+            responseModel.Data = $"Key: {requestModel.key} , Value : {requestModel.value} ";
+            _logger.Info("Put Method Executed");
+            return Ok(responseModel);
 
-            _greetings[requestModel.key] = requestModel.value;
-            _logger.LogInformation($"Greeting updated: Key = {requestModel.key}, New Value = {requestModel.value}");
-
-            return Ok(new ResponseModel<string>
-            {
-                Success = true,
-                Message = "Greeting message updated successfully.",
-                Data = $"Key: {requestModel.key}, Updated Value: {requestModel.value}"
-            });
         }
 
         /// <summary>
-        /// Patch method for modifying a greeting message
+        /// Patch method to accept a custom greeting message
         /// </summary>
+        /// <param name="requestModel">Greeting message from user</param>
+        /// <returns>Confirmation response</returns>
         [HttpPatch]
-        public IActionResult Patch(string key, string modifiedMessage)
+        public IActionResult Patch(RequestModel requestModel)
         {
-            _logger.LogInformation($"PATCH request received for Key: {key} with Modified Value: {modifiedMessage}");
+            ResponseModel<String> responseModel = new ResponseModel<string>();
 
-            if (!_greetings.ContainsKey(key))
-            {
-                _logger.LogWarning($"PATCH failed: Key {key} not found.");
-                return NotFound(new ResponseModel<string>
-                {
-                    Success = false,
-                    Message = "Key not found.",
-                    Data = null
-                });
-            }
-
-            _greetings[key] = modifiedMessage;
-            _logger.LogInformation($"Greeting modified: Key = {key}, New Value = {modifiedMessage}");
-
-            return Ok(new ResponseModel<string>
-            {
-                Success = true,
-                Message = "Greeting message modified successfully.",
-                Data = $"Key: {key}, Modified Value: {modifiedMessage}"
-            });
+            responseModel.Success = true;
+            responseModel.Message = "API Endpoint Hit";
+            responseModel.Data = $"Key: {requestModel.key} , Value : {requestModel.value} ";
+            _logger.Info("Patch Method Executed");
+            return Ok(responseModel);
         }
 
         /// <summary>
         /// Delete method to remove a greeting message
         /// </summary>
-        [HttpDelete("{key}")]
-        public IActionResult Delete(string key)
+        [HttpDelete]
+        public IActionResult Delete()
         {
-            _logger.LogInformation($"DELETE request received for Key: {key}");
 
-            if (!_greetings.ContainsKey(key))
-            {
-                _logger.LogWarning($"DELETE failed: Key {key} not found.");
-                return NotFound(new ResponseModel<string>
-                {
-                    Success = false,
-                    Message = "Key not found.",
-                    Data = null
-                });
-            }
+            ResponseModel<String> responseModel = new ResponseModel<string>();
 
-            _greetings.Remove(key);
-            _logger.LogInformation($"Greeting deleted: Key = {key}");
-
-            return Ok(new ResponseModel<string>
-            {
-                Success = true,
-                Message = "Greeting message deleted successfully.",
-                Data = $"Deleted Key: {key}"
-            });
+            responseModel.Success = true;
+            responseModel.Message = "API Endpoint Hit";
+            responseModel.Data = null;
+            _logger.Info("Detele Method Executed");
+            return Ok(responseModel);
         }
+
+
     }
 }

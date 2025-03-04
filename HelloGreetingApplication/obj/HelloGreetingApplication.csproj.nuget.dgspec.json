@@ -113,6 +113,9 @@
             "projectReferences": {
               "C:\\Users\\Ankit Singh\\source\\repos\\HelloGreetingApplication\\BusinessLayer\\BusinessLayer.csproj": {
                 "projectPath": "C:\\Users\\Ankit Singh\\source\\repos\\HelloGreetingApplication\\BusinessLayer\\BusinessLayer.csproj"
+              },
+              "C:\\Users\\Ankit Singh\\source\\repos\\HelloGreetingApplication\\RepositoryLayer\\RepositoryLayer.csproj": {
+                "projectPath": "C:\\Users\\Ankit Singh\\source\\repos\\HelloGreetingApplication\\RepositoryLayer\\RepositoryLayer.csproj"
               }
             }
           }
@@ -289,7 +292,11 @@
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\Ankit Singh\\source\\repos\\HelloGreetingApplication\\ModelLayer\\ModelLayer.csproj": {
+                "projectPath": "C:\\Users\\Ankit Singh\\source\\repos\\HelloGreetingApplication\\ModelLayer\\ModelLayer.csproj"
+              }
+            }
           }
         },
         "warningProperties": {

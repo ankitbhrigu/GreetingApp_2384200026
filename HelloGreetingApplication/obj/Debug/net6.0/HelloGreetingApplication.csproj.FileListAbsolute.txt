@@ -36,3 +36,6 @@ C:\Users\Ankit Singh\source\repos\HelloGreetingApplication\HelloGreetingApplicat
 C:\Users\Ankit Singh\source\repos\HelloGreetingApplication\HelloGreetingApplication\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\Ankit Singh\source\repos\HelloGreetingApplication\HelloGreetingApplication\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
 C:\Users\Ankit Singh\source\repos\HelloGreetingApplication\HelloGreetingApplication\obj\Debug\net6.0\HelloGreetingApplication.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Ankit Singh\source\repos\HelloGreetingApplication\HelloGreetingApplication\bin\Debug\net6.0\NLog.dll
+C:\Users\Ankit Singh\source\repos\HelloGreetingApplication\HelloGreetingApplication\bin\Debug\net6.0\NLog.Extensions.Logging.dll
+C:\Users\Ankit Singh\source\repos\HelloGreetingApplication\HelloGreetingApplication\bin\Debug\net6.0\NLog.Web.AspNetCore.dll

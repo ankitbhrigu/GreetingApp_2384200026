@@ -21,6 +21,9 @@
         }
       },
       "RepositoryLayer/1.0.0": {
+        "dependencies": {
+          "ModelLayer": "1.0.0"
+        },
         "runtime": {
           "RepositoryLayer.dll": {}
         }

@@ -3,10 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ModelLayer.Model;
 
 namespace BusinessLayer.Interface
 {
-    internal interface IGreetingBL
+    public interface IGreetingBL
     {
+        string GetGreet();
+        string GetGreeting(UserNameRequestModel request);
     }
+
 }

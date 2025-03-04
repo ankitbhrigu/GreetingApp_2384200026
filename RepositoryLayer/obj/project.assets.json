@@ -1,11 +1,30 @@
 {
   "version": 3,
   "targets": {
-    "net6.0": {}
+    "net6.0": {
+      "ModelLayer/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/ModelLayer.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ModelLayer.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "ModelLayer/1.0.0": {
+      "type": "project",
+      "path": "../ModelLayer/ModelLayer.csproj",
+      "msbuildProject": "../ModelLayer/ModelLayer.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net6.0": []
+    "net6.0": [
+      "ModelLayer >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\Ankit Singh\\.nuget\\packages\\": {}
@@ -34,7 +53,11 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\Ankit Singh\\source\\repos\\HelloGreetingApplication\\ModelLayer\\ModelLayer.csproj": {
+              "projectPath": "C:\\Users\\Ankit Singh\\source\\repos\\HelloGreetingApplication\\ModelLayer\\ModelLayer.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

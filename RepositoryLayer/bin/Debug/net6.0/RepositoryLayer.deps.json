@@ -7,14 +7,27 @@
   "targets": {
     ".NETCoreApp,Version=v6.0": {
       "RepositoryLayer/1.0.0": {
+        "dependencies": {
+          "ModelLayer": "1.0.0"
+        },
         "runtime": {
           "RepositoryLayer.dll": {}
+        }
+      },
+      "ModelLayer/1.0.0": {
+        "runtime": {
+          "ModelLayer.dll": {}
         }
       }
     }
   },
   "libraries": {
     "RepositoryLayer/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "ModelLayer/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

@@ -9,3 +9,7 @@ C:\Users\Ankit Singh\source\repos\HelloGreetingApplication\RepositoryLayer\obj\D
 C:\Users\Ankit Singh\source\repos\HelloGreetingApplication\RepositoryLayer\obj\Debug\net6.0\refint\RepositoryLayer.dll
 C:\Users\Ankit Singh\source\repos\HelloGreetingApplication\RepositoryLayer\obj\Debug\net6.0\RepositoryLayer.pdb
 C:\Users\Ankit Singh\source\repos\HelloGreetingApplication\RepositoryLayer\obj\Debug\net6.0\ref\RepositoryLayer.dll
+C:\Users\Ankit Singh\source\repos\HelloGreetingApplication\RepositoryLayer\bin\Debug\net6.0\ModelLayer.dll
+C:\Users\Ankit Singh\source\repos\HelloGreetingApplication\RepositoryLayer\bin\Debug\net6.0\ModelLayer.pdb
+C:\Users\Ankit Singh\source\repos\HelloGreetingApplication\RepositoryLayer\obj\Debug\net6.0\RepositoryLayer.csproj.AssemblyReference.cache
+C:\Users\Ankit Singh\source\repos\HelloGreetingApplication\RepositoryLayer\obj\Debug\net6.0\Reposito.A0A61804.Up2Date
