@@ -21,6 +21,12 @@ namespace RepositoryLayer.Service
         {
             return _context.Greetings.Find(id);
         }
+
+        public List<GreetingEntity> GetAllGreetings()
+        {
+            return _context.Greetings.ToList();
+        }
+
         public string GetGreeting(UserNameRequestModel request)
         {
             if (!string.IsNullOrEmpty(request.FirstName) && !string.IsNullOrEmpty(request.LastName))

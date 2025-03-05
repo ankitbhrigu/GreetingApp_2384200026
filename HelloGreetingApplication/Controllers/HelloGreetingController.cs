@@ -209,6 +209,25 @@ namespace HelloGreetingApplication.Controllers
 
         }
 
+        /// <summary>
+        /// Retrieves a list of all greeting messages.
+        /// </summary>
+        /// <returns>A list of all stored greetings.</returns>
+        [HttpGet("all")]
+        public IActionResult GetAllGreetings()
+        {
+            var greetings = _greetingBL.GetAllGreetings();
+            if (greetings == null || greetings.Count == 0)
+            {
+                _logger.Info("No greetings found.");
+                return NotFound(new { Success = false, Message = "No greetings found." });
+            }
+
+            _logger.Info("All greetings retrieved successfully.");
+            return Ok(new { Success = true, Data = greetings });
+        }
+
+
 
     }
 }
