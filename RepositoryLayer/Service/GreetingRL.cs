@@ -16,6 +16,11 @@ namespace RepositoryLayer.Service
 
     {
         private readonly GreetingDbContext _context;
+
+        public GreetingEntity GetGreetingById(int id)
+        {
+            return _context.Greetings.Find(id);
+        }
         public string GetGreeting(UserNameRequestModel request)
         {
             if (!string.IsNullOrEmpty(request.FirstName) && !string.IsNullOrEmpty(request.LastName))

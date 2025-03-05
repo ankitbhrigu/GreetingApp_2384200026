@@ -177,6 +177,38 @@ namespace HelloGreetingApplication.Controllers
             return Ok(responseModel);
         }
 
+        /// <summary>
+        /// Retrieves a greeting message by its unique identifier.
+        /// </summary>
+        /// <param name="id">The unique identifier of the greeting message.</param>
+        /// <returns>
+        /// Returns an HTTP 200 response with the greeting message if found.
+        /// Returns an HTTP 404 response if no greeting message is found.
+        /// </returns>
+        [HttpGet("{id}")]
+        public IActionResult Get(int id)
+        {
+            ResponseModel<String> responseModel = new ResponseModel<string>();
+
+            var greeting = _greetingBL.GetGreetingById(id);
+            if (greeting == null)
+            {
+
+                responseModel.Success = false;
+                responseModel.Message = "Not Found";
+                responseModel.Data = null;
+                _logger.Info("Find Greeting by Id is Faileds");
+                return NotFound(responseModel);
+            }
+
+            responseModel.Success = true;
+            responseModel.Message = "Greeting saved successfully.";
+            responseModel.Data = greeting.Message;
+            _logger.Info("Find Greeting by Id is Faileds");
+            return Ok(responseModel);
+
+        }
+
 
     }
 }

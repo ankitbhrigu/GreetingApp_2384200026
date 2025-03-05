@@ -13,6 +13,7 @@ namespace BusinessLayer.Interface
         string GetGreet();
         string GetGreeting(UserNameRequestModel request);
         GreetingEntity AddGreeting(GreetingEntity greeting);
+        GreetingEntity GetGreetingById(int id);
     }
 
 }
