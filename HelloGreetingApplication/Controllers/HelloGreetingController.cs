@@ -4,6 +4,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using ModelLayer.Model;
 using NLog;
+using RepositoryLayer.Entity;
+using RepositoryLayer.Service;
 
 namespace HelloGreetingApplication.Controllers
 {
@@ -146,6 +148,32 @@ namespace HelloGreetingApplication.Controllers
             responseModel.Message = "API Endpoint Hit";
             responseModel.Data = null;
             _logger.Info("Detele Method Executed");
+            return Ok(responseModel);
+        }
+
+        /// <summary>
+        /// Handles the creation of a new greeting message.
+        /// </summary>
+        /// <param name="requestModel">The request containing the greeting message.</param>
+        /// <returns>Returns a success response if the greeting is saved, or an error response if the input is invalid.</returns>
+        [HttpPost("UC4")]
+        public IActionResult SendGreeting(RequestModel requestModel)
+        {
+            ResponseModel<String> responseModel = new ResponseModel<string>();
+
+            if (requestModel == null || string.IsNullOrWhiteSpace(requestModel.value))
+            {
+                return BadRequest(new { Success = false, Message = "Invalid input. Message cannot be empty." });
+            }
+
+            var greeting = new GreetingEntity { Message = requestModel.value };
+            var savedGreeting = _greetingBL.AddGreeting(greeting);
+
+
+            responseModel.Success = true;
+            responseModel.Message = "Greeting saved successfully.";
+            responseModel.Data = savedGreeting.Message;
+            _logger.Info("SendGreeting Method Executed Successfully");
             return Ok(responseModel);
         }
 

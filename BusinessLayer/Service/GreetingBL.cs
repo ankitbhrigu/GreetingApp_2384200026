@@ -1,5 +1,6 @@
 ﻿using BusinessLayer.Interface;
 using ModelLayer.Model;
+using RepositoryLayer.Entity;
 using RepositoryLayer.Interface;
 using RepositoryLayer.Service;
 using System;
@@ -26,6 +27,11 @@ namespace BusinessLayer.Service
         public string GetGreet()
         {
             return "Hello World";
+        }
+
+        public GreetingEntity AddGreeting(GreetingEntity greeting)
+        {
+            return _greetingRL.AddGreeting(greeting);
         }
     }
 }

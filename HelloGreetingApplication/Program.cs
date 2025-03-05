@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Builder;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -7,6 +8,7 @@ using BusinessLayer.Interface;
 using BusinessLayer.Service;
 using RepositoryLayer.Interface;
 using RepositoryLayer.Service;
+using RepositoryLayer.Context;
 using NLog;
 using NLog.Web;
 
@@ -20,6 +22,10 @@ logger.Info("Application is starting...");
 builder.Services.AddControllers();
 builder.Services.AddScoped<IGreetingBL, GreetingBL>();
 builder.Services.AddScoped<IGreetingRL, GreetingRL>();
+
+builder.Services.AddDbContext<GreetingDbContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
 
 //Swagger Configuration
 builder.Services.AddEndpointsApiExplorer();
