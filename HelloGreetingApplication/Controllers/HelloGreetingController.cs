@@ -227,6 +227,42 @@ namespace HelloGreetingApplication.Controllers
             return Ok(new { Success = true, Data = greetings });
         }
 
+        /// <summary>
+        /// Updates an existing greeting message.
+        /// </summary>
+        /// <param name="id">The ID of the greeting to update.</param>
+        /// <param name="requestModel">The updated greeting message.</param>
+        /// <returns>The updated greeting message.</returns>
+        [HttpPut("{id}")]
+        public IActionResult UpdateGreeting(int id, [FromBody] RequestModel requestModel)
+        {
+            ResponseModel<string> responseModel = new ResponseModel<string>();
+
+            if (requestModel == null || string.IsNullOrWhiteSpace(requestModel.value))
+            {
+                return BadRequest(new { Success = false, Message = "Invalid input. Message cannot be empty." });
+            }
+
+            var existingGreeting = _greetingBL.GetGreetingById(id);
+            if (existingGreeting == null)
+            {
+                responseModel.Success = false;
+                responseModel.Message = "Greeting not found.";
+                _logger.Info("Update Greeting failed. Greeting not found.");
+                return NotFound(responseModel);
+            }
+
+            existingGreeting.Message = requestModel.value;
+            var updatedGreeting = _greetingBL.UpdateGreeting(existingGreeting);
+
+            responseModel.Success = true;
+            responseModel.Message = "Greeting updated successfully.";
+            responseModel.Data = updatedGreeting.Message;
+            _logger.Info("Greeting updated successfully.");
+
+            return Ok(responseModel);
+        }
+
 
 
     }

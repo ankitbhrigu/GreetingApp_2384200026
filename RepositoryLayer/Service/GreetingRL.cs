@@ -27,6 +27,17 @@ namespace RepositoryLayer.Service
             return _context.Greetings.ToList();
         }
 
+        public GreetingEntity UpdateGreeting(GreetingEntity greeting) // New Method
+        {
+            var existingGreeting = _context.Greetings.Find(greeting.Id);
+            if (existingGreeting != null)
+            {
+                existingGreeting.Message = greeting.Message;
+                _context.SaveChanges();
+            }
+            return existingGreeting;
+        }
+
         public string GetGreeting(UserNameRequestModel request)
         {
             if (!string.IsNullOrEmpty(request.FirstName) && !string.IsNullOrEmpty(request.LastName))

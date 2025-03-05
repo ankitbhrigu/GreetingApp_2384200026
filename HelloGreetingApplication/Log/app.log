@@ -63,3 +63,37 @@
 2025-03-06 00:41:19.6187 | Info | Request finished HTTP/2 GET https://localhost:7132/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 54.3265ms 
 2025-03-06 00:41:19.7714 | Info | Request starting HTTP/2 GET https://localhost:7132/swagger/v1/swagger.json - - 
 2025-03-06 00:41:19.9534 | Info | Request finished HTTP/2 GET https://localhost:7132/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 182.0180ms 
+2025-03-06 00:50:12.5117 | Info | Now listening on: https://localhost:7132 
+2025-03-06 00:50:12.5472 | Info | Now listening on: http://localhost:5073 
+2025-03-06 00:50:12.5472 | Info | Application started. Press Ctrl+C to shut down. 
+2025-03-06 00:50:12.5472 | Info | Hosting environment: Development 
+2025-03-06 00:50:12.5472 | Info | Content root path: C:\Users\Ankit Singh\source\repos\HelloGreetingApplication\HelloGreetingApplication\ 
+2025-03-06 00:50:12.7678 | Info | Request starting HTTP/2 GET https://localhost:7132/swagger/index.html - - 
+2025-03-06 00:50:12.9807 | Info | Request finished HTTP/2 GET https://localhost:7132/swagger/index.html - - - 200 - text/html;charset=utf-8 214.3720ms 
+2025-03-06 00:50:13.0942 | Info | Request starting HTTP/2 GET https://localhost:7132/_framework/aspnetcore-browser-refresh.js - - 
+2025-03-06 00:50:13.0942 | Info | Request finished HTTP/2 GET https://localhost:7132/_framework/aspnetcore-browser-refresh.js - - - 200 12380 application/javascript;+charset=utf-8 3.4000ms 
+2025-03-06 00:50:13.1156 | Info | Request starting HTTP/2 GET https://localhost:7132/_vs/browserLink - - 
+2025-03-06 00:50:13.1537 | Info | Request finished HTTP/2 GET https://localhost:7132/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 38.1111ms 
+2025-03-06 00:50:13.3967 | Info | Request starting HTTP/2 GET https://localhost:7132/swagger/v1/swagger.json - - 
+2025-03-06 00:50:13.5220 | Info | Request finished HTTP/2 GET https://localhost:7132/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 125.2663ms 
+2025-03-06 00:50:25.7592 | Info | Request starting HTTP/2 GET https://localhost:7132/swagger/index.html - - 
+2025-03-06 00:50:25.7592 | Info | Request finished HTTP/2 GET https://localhost:7132/swagger/index.html - - - 200 - text/html;charset=utf-8 5.9718ms 
+2025-03-06 00:50:25.8069 | Info | Request starting HTTP/2 GET https://localhost:7132/_vs/browserLink - - 
+2025-03-06 00:50:25.8069 | Info | Request starting HTTP/2 GET https://localhost:7132/_framework/aspnetcore-browser-refresh.js - - 
+2025-03-06 00:50:25.8069 | Info | Request finished HTTP/2 GET https://localhost:7132/_framework/aspnetcore-browser-refresh.js - - - 200 12380 application/javascript;+charset=utf-8 1.1312ms 
+2025-03-06 00:50:25.8069 | Info | Request finished HTTP/2 GET https://localhost:7132/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 9.5525ms 
+2025-03-06 00:50:25.9554 | Info | Request starting HTTP/2 GET https://localhost:7132/swagger/v1/swagger.json - - 
+2025-03-06 00:50:25.9554 | Info | Request finished HTTP/2 GET https://localhost:7132/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 4.1050ms 
+2025-03-06 00:50:42.5653 | Info | Now listening on: https://localhost:7132 
+2025-03-06 00:50:42.6409 | Info | Now listening on: http://localhost:5073 
+2025-03-06 00:50:42.6515 | Info | Application started. Press Ctrl+C to shut down. 
+2025-03-06 00:50:42.6515 | Info | Hosting environment: Development 
+2025-03-06 00:50:42.6662 | Info | Content root path: C:\Users\Ankit Singh\source\repos\HelloGreetingApplication\HelloGreetingApplication\ 
+2025-03-06 00:50:43.9459 | Info | Request starting HTTP/2 GET https://localhost:7132/swagger/index.html - - 
+2025-03-06 00:50:44.4265 | Info | Request finished HTTP/2 GET https://localhost:7132/swagger/index.html - - - 200 - text/html;charset=utf-8 483.5030ms 
+2025-03-06 00:50:44.4614 | Info | Request starting HTTP/2 GET https://localhost:7132/_framework/aspnetcore-browser-refresh.js - - 
+2025-03-06 00:50:44.4614 | Info | Request starting HTTP/2 GET https://localhost:7132/_vs/browserLink - - 
+2025-03-06 00:50:44.4614 | Info | Request finished HTTP/2 GET https://localhost:7132/_framework/aspnetcore-browser-refresh.js - - - 200 12380 application/javascript;+charset=utf-8 7.0270ms 
+2025-03-06 00:50:44.5953 | Info | Request finished HTTP/2 GET https://localhost:7132/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 131.0982ms 
+2025-03-06 00:50:44.6822 | Info | Request starting HTTP/2 GET https://localhost:7132/swagger/v1/swagger.json - - 
+2025-03-06 00:50:44.8953 | Info | Request finished HTTP/2 GET https://localhost:7132/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 213.0515ms 
