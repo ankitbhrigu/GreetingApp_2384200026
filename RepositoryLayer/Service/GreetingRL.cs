@@ -38,6 +38,18 @@ namespace RepositoryLayer.Service
             return existingGreeting;
         }
 
+        public bool DeleteGreeting(int id) // New delete method
+        {
+            var greeting = _context.Greetings.Find(id);
+            if (greeting != null)
+            {
+                _context.Greetings.Remove(greeting);
+                _context.SaveChanges();
+                return true;
+            }
+            return false;
+        }
+
         public string GetGreeting(UserNameRequestModel request)
         {
             if (!string.IsNullOrEmpty(request.FirstName) && !string.IsNullOrEmpty(request.LastName))
